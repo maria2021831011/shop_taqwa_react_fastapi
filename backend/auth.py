@@ -63,6 +63,15 @@ def login(data: LoginSchema):
     if not pwd_context.verify(data.password, user["password"]):
         raise HTTPException(status_code=400, detail="Invalid email or password")
 
-    token = jwt.encode({"id": user["id"], "role": user["role"]}, SECRET_KEY, algorithm="HS256")
+    token = jwt.encode(
+    {
+        "id": user["id"],
+        "role": user["role"],
+        "email": user["email"]
+    },
+    SECRET_KEY,
+    algorithm="HS256"
+)
 
-    return {"token": token, "role": user["role"]}
+
+    return {"token": token, "role": user["role"], "id": user["id"]}
