@@ -70,7 +70,10 @@ app.include_router(messages.router)
 
 @app.on_event("startup")
 def startup_event():
-    create_tables()  # Run once when server starts
+    try:
+        create_tables()
+    except Exception as error:
+        print(f"Database initialization failed: {error}")
 
 @app.get("/health")
 def health_check():
