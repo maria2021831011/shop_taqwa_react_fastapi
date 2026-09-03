@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import './Stock.css'; // We'll create this CSS file
+import './stock.css';
 
 const Stock = () => {
   const [products, setProducts] = useState([]);
