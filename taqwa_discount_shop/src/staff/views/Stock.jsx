@@ -16,7 +16,7 @@ const Stock = () => {
   const fetchStock = async () => {
     try {
       setLoading(true);
-      const res = await axios.get("http://localhost:8000/staff/stock");
+      const res = await axios.get("https://shop-taqwa-react-fastapi-2.onrender.com/staff/stock");
       setProducts(res.data);
     } catch (error) {
       console.error("Error fetching stock:", error);
@@ -37,7 +37,7 @@ const Stock = () => {
     }
 
     try {
-      await axios.post("http://localhost:8000/staff/stock", {
+      await axios.post("https://shop-taqwa-react-fastapi-2.onrender.com/staff/stock", {
         name: form.name,
         price: Number(form.price),
         stock: Number(form.stock)
@@ -58,7 +58,7 @@ const Stock = () => {
         ? `/increase/${id}?qty=1`
         : `/decrease/${id}?qty=1`;
 
-      await axios.patch("http://localhost:8000/staff/stock" + url);
+      await axios.patch("https://shop-taqwa-react-fastapi-2.onrender.com/staff/stock" + url);
       fetchStock();
     } catch (error) {
       console.error("Error updating quantity:", error);
@@ -69,7 +69,7 @@ const Stock = () => {
     if (!window.confirm(`Are you sure you want to delete "${name}"?`)) return;
     
     try {
-      await axios.delete(`http://localhost:8000/staff/stock/${id}`);
+      await axios.delete(`https://shop-taqwa-react-fastapi-2.onrender.com/staff/stock/${id}`);
       setSuccessMsg(`🗑️ "${name}" deleted successfully!`);
       setTimeout(() => setSuccessMsg(""), 3000);
       fetchStock();

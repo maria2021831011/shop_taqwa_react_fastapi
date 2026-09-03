@@ -12,7 +12,7 @@ const LiveStock = () => {
   // Fetch stock data
   const fetchStockData = () => {
     setLoading(true);
-    fetch("http://localhost:8000/products/", {
+    fetch("https://shop-taqwa-react-fastapi-2.onrender.com/products/", {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`
       }

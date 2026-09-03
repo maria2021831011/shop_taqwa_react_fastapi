@@ -15,7 +15,7 @@ const DailySales = () => {
       setError(null);
 
       try {
-        const response = await fetch(`http://localhost:8000/manager/daily-sales?date=${date}`, {
+        const response = await fetch(`https://shop-taqwa-react-fastapi-2.onrender.com/manager/daily-sales?date=${date}`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`
           }

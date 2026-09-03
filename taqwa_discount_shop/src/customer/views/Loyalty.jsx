@@ -10,7 +10,7 @@ const Loyalty = () => {
     const fetchLoyalty = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await axios.get("http://127.0.0.1:8000/loyalty/me", {
+        const res = await axios.get("https://shop-taqwa-react-fastapi-2.onrender.com/loyalty/me", {
           headers: {
             Authorization: `Bearer ${token}`,
           },

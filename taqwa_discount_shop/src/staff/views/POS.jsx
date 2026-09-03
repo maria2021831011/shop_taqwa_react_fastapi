@@ -18,7 +18,7 @@ const POS = () => {
   const fetchProducts = async () => {
     try {
       setLoading(true);
-      const res = await axios.get("http://localhost:8000/staff/stock");
+      const res = await axios.get("https://shop-taqwa-react-fastapi-2.onrender.com/staff/stock");
       setProducts(res.data);
     } catch (error) {
       console.error("Error fetching products:", error);
@@ -115,7 +115,7 @@ const POS = () => {
         payment_method: "cash",
       };
 
-      await axios.post("http://localhost:8000/pos/complete", payload);
+      await axios.post("https://shop-taqwa-react-fastapi-2.onrender.com/pos/complete", payload);
 
       setSuccessMsg(`✅ Sale completed! Receipt #INV-${Date.now()}`);
       setCart([]);

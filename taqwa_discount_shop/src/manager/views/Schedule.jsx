@@ -21,10 +21,10 @@ const Schedule = () => {
     setLoading(true);
     try {
       const [staffRes, scheduleRes] = await Promise.all([
-        fetch("http://localhost:8000/schedule/staff", {
+        fetch("https://shop-taqwa-react-fastapi-2.onrender.com/schedule/staff", {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
         }),
-        fetch("http://localhost:8000/schedule/", {
+        fetch("https://shop-taqwa-react-fastapi-2.onrender.com/schedule/", {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
         })
       ]);
@@ -65,7 +65,7 @@ const Schedule = () => {
     if (!schedule) return;
 
     try {
-      const response = await fetch("http://localhost:8000/schedule/", {
+      const response = await fetch("https://shop-taqwa-react-fastapi-2.onrender.com/schedule/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -104,7 +104,7 @@ const Schedule = () => {
     if (!window.confirm("Delete this schedule?")) return;
 
     try {
-      const response = await fetch(`http://localhost:8000/schedule/${staffId}`, {
+      const response = await fetch(`https://shop-taqwa-react-fastapi-2.onrender.com/schedule/${staffId}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
       });

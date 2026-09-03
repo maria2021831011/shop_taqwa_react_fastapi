@@ -40,7 +40,7 @@ const MySchedule = () => {
       
       setStaffName(payload.name || "Staff Member");
 
-      const response = await fetch(`http://localhost:8000/schedule/${userId}`, {
+      const response = await fetch(`https://shop-taqwa-react-fastapi-2.onrender.com/schedule/${userId}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
 

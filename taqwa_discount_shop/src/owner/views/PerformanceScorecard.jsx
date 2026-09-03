@@ -7,7 +7,7 @@ const PerformanceScorecard = () => {
     const token = localStorage.getItem("token");
 
     const res = await fetch(
-      "http://127.0.0.1:8000/owner/employee-performance",
+      "https://shop-taqwa-react-fastapi-2.onrender.com/owner/employee-performance",
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -56,7 +56,7 @@ const PerformanceScorecard = () => {
     const token = localStorage.getItem("token");
 
     const res = await fetch(
-      "http://127.0.0.1:8000/owner/employee-performance",
+      "https://shop-taqwa-react-fastapi-2.onrender.com/owner/employee-performance",
       {
         headers: {
           Authorization: `Bearer ${token}`,

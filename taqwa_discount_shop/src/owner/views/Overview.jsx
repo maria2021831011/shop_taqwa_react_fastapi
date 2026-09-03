@@ -11,7 +11,7 @@ const Overview = () => {
   const fetchOverview = async () => {
     const token = localStorage.getItem("token");
 
-    const res = await fetch("http://localhost:8000/owner/overview", {
+    const res = await fetch("https://shop-taqwa-react-fastapi-2.onrender.com/owner/overview", {
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -72,7 +72,7 @@ const Overview = () => {
   const fetchOverview = async () => {
     const token = localStorage.getItem("token");
 
-    const res = await fetch("http://localhost:8000/owner/overview", {
+    const res = await fetch("https://shop-taqwa-react-fastapi-2.onrender.com/owner/overview", {
       headers: {
         Authorization: `Bearer ${token}`
       }

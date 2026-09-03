@@ -7,7 +7,7 @@ const ActivityLog = () => {
     const token = localStorage.getItem("token");
 
     try {
-      const res = await fetch("http://127.0.0.1:8000/owner/activities", {
+      const res = await fetch("https://shop-taqwa-react-fastapi-2.onrender.com/owner/activities", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -68,7 +68,7 @@ const ActivityLog = () => {
     const token = localStorage.getItem("token");
 
     try {
-      const res = await fetch("http://127.0.0.1:8000/owner/activities", {
+      const res = await fetch("https://shop-taqwa-react-fastapi-2.onrender.com/owner/activities", {
         headers: {
           Authorization: `Bearer ${token}`,
         },

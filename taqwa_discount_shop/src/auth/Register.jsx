@@ -32,7 +32,7 @@ const Register = () => {
     }
 
     try {
-      await axios.post("http://127.0.0.1:8000/register", form);
+      await axios.post("https://shop-taqwa-react-fastapi-2.onrender.com/register", form);
       alert("Registered successfully");
       navigate("/login");
     } catch (err) {

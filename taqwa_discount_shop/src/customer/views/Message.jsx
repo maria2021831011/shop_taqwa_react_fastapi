@@ -13,7 +13,7 @@ const Message = () => {
 
   const fetchMessages = async () => {
     try {
-      const res = await axios.get("http://127.0.0.1:8000/messages/my", {
+      const res = await axios.get("https://shop-taqwa-react-fastapi-2.onrender.com/messages/my", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -45,7 +45,7 @@ const Message = () => {
     setSending(true);
     try {
       await axios.post(
-        "http://127.0.0.1:8000/messages/send",
+        "https://shop-taqwa-react-fastapi-2.onrender.com/messages/send",
         { message: text },
         {
           headers: {

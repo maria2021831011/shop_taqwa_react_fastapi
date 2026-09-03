@@ -12,7 +12,7 @@ const SalesSummary = () => {
   const [animatedSales, setAnimatedSales] = useState(0);
 
   useEffect(() => {
-    axios.get("http://localhost:8000/sales/summary/today", {
+    axios.get("https://shop-taqwa-react-fastapi-2.onrender.com/sales/summary/today", {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`
       }

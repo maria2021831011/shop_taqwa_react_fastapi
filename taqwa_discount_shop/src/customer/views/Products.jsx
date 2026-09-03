@@ -10,7 +10,7 @@ const Products = () => {
 
   const fetchProducts = async () => {
     try {
-      const res = await axios.get("http://127.0.0.1:8000/products/");
+      const res = await axios.get("https://shop-taqwa-react-fastapi-2.onrender.com/products/");
       setProducts(res.data);
     } catch (err) {
       console.error("Error loading products", err);

@@ -10,7 +10,7 @@ const InvoiceUpload = () => {
   const fetchInvoices = async () => {
     if (!token) return;
     try {
-      const res = await fetch("http://localhost:8000/invoices/list", {
+      const res = await fetch("https://shop-taqwa-react-fastapi-2.onrender.com/invoices/list", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -37,7 +37,7 @@ const InvoiceUpload = () => {
     formData.append("invoice", file);
 
     try {
-      const res = await fetch("http://localhost:8000/invoices/upload", {
+      const res = await fetch("https://shop-taqwa-react-fastapi-2.onrender.com/invoices/upload", {
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },
         body: formData,

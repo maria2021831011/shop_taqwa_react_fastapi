@@ -36,7 +36,7 @@ const PendingOrders = () => {
     setSuccess(false);
 
     try {
-      await axios.post("http://localhost:8000/purchase", form, {
+      await axios.post("https://shop-taqwa-react-fastapi-2.onrender.com/purchase", form, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`
         }

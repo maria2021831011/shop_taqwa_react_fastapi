@@ -15,7 +15,7 @@ const SalesGraph = () => {
   const fetchSales = async () => {
     const token = localStorage.getItem("token");
 
-    const res = await fetch("http://127.0.0.1:8000/owner/sales-analytics", {
+    const res = await fetch("https://shop-taqwa-react-fastapi-2.onrender.com/owner/sales-analytics", {
       headers: {
         Authorization: `Bearer ${token}`
       }

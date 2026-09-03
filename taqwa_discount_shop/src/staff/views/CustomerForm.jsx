@@ -37,7 +37,7 @@ const CustomerForm = () => {
   const fetchCustomers = async () => {
     setLoading(true);
     try {
-      const res = await axios.get('http://localhost:8000/customers', {
+      const res = await axios.get('https://shop-taqwa-react-fastapi-2.onrender.com/customers', {
         headers: { Authorization: `Bearer ${token}` },
         params: { search: searchTerm }
       });
@@ -53,7 +53,7 @@ const CustomerForm = () => {
   // Fetch customer transactions
   const fetchTransactions = async (customerId) => {
     try {
-      const res = await axios.get(`http://localhost:8000/customers/${customerId}/transactions`, {
+      const res = await axios.get(`https://shop-taqwa-react-fastapi-2.onrender.com/customers/${customerId}/transactions`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setTransactions(res.data.transactions);
@@ -85,7 +85,7 @@ const CustomerForm = () => {
     }
 
     try {
-      const url = 'http://localhost:8000/customers';
+      const url = 'https://shop-taqwa-react-fastapi-2.onrender.com/customers';
       
       const response = await axios.post(url, formData, {
         headers: { Authorization: `Bearer ${token}` }
@@ -125,7 +125,7 @@ const CustomerForm = () => {
     }
 
     try {
-      await axios.post('http://localhost:8000/customers/adjust-points', 
+      await axios.post('https://shop-taqwa-react-fastapi-2.onrender.com/customers/adjust-points', 
         {
           customer_id: selectedCustomer.id,
           adjustment_type: adjustmentType,

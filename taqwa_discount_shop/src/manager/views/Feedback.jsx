@@ -32,7 +32,7 @@ const Feedback = () => {
   const fetchAllMessages = async () => {
     setLoading(true);
     try {
-      const response = await fetch("http://localhost:8000/messages/", {
+      const response = await fetch("https://shop-taqwa-react-fastapi-2.onrender.com/messages/", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`
         }
@@ -52,7 +52,7 @@ const Feedback = () => {
 
     setReplySending(true);
     try {
-      await fetch("http://localhost:8000/messages/reply", {
+      await fetch("https://shop-taqwa-react-fastapi-2.onrender.com/messages/reply", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

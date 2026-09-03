@@ -10,7 +10,7 @@ const Target = () => {
 
   const fetchTodaysSales = (date) => {
     setLoading(true);
-    fetch(`http://localhost:8000/manager/daily-sales?date=${date}`, {
+    fetch(`https://shop-taqwa-react-fastapi-2.onrender.com/manager/daily-sales?date=${date}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`
       }

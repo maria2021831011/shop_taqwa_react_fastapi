@@ -16,7 +16,7 @@ const Notifications = () => {
   const fetchNotifications = async () => {
     try {
       const token = localStorage.getItem("token");
-      const response = await fetch("http://localhost:8000/purchase/orders", {
+      const response = await fetch("https://shop-taqwa-react-fastapi-2.onrender.com/purchase/orders", {
         headers: {
           Authorization: `Bearer ${token}`,
         },

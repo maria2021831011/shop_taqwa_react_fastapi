@@ -7,7 +7,7 @@ const ProfitLoss = () => {
     const token = localStorage.getItem("token");
 
     const res = await fetch(
-      "http://127.0.0.1:8000/owner/profit-loss",
+      "https://shop-taqwa-react-fastapi-2.onrender.com/owner/profit-loss",
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -61,7 +61,7 @@ const ProfitLoss = () => {
 
     try {
       const res = await fetch(
-        "http://127.0.0.1:8000/owner/profit-loss",
+        "https://shop-taqwa-react-fastapi-2.onrender.com/owner/profit-loss",
         {
           headers: {
             Authorization: `Bearer ${token}`,

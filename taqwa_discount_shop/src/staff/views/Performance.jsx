@@ -38,7 +38,7 @@ const Performance = () => {
   const fetchPerformance = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:8000/sales/performance/me",
+        "https://shop-taqwa-react-fastapi-2.onrender.com/sales/performance/me",
         {
           headers: {
             Authorization: `Bearer ${token}`

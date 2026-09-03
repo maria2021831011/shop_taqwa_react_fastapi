@@ -8,7 +8,7 @@ const StockOverview = () => {
     const token = localStorage.getItem("token");
 
     try {
-      const res = await fetch("http://127.0.0.1:8000/owner/stock", {
+      const res = await fetch("https://shop-taqwa-react-fastapi-2.onrender.com/owner/stock", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -65,7 +65,7 @@ const StockOverview = () => {
     const token = localStorage.getItem("token");
 
     try {
-      const res = await fetch("http://127.0.0.1:8000/owner/stock", {
+      const res = await fetch("https://shop-taqwa-react-fastapi-2.onrender.com/owner/stock", {
         headers: {
           Authorization: `Bearer ${token}`,
         },

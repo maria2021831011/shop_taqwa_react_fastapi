@@ -13,7 +13,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const res = await axios.post("http://127.0.0.1:8000/login", form);
+    const res = await axios.post("https://shop-taqwa-react-fastapi-2.onrender.com/login", form);
 
     const { token, role, id } = res.data;
     localStorage.setItem("token", token);
@@ -65,7 +65,7 @@ const Login = () => {
     setError("");
 
     try {
-      const res = await axios.post("http://127.0.0.1:8000/login", form);
+      const res = await axios.post("https://shop-taqwa-react-fastapi-2.onrender.com/login", form);
       
       const { token, role, id } = res.data;
       localStorage.setItem("token", token);

@@ -7,7 +7,7 @@ const Notifications = () => {
     const token = localStorage.getItem("token");
 
     try {
-      const res = await fetch("http://127.0.0.1:8000/owner/notifications", {
+      const res = await fetch("https://shop-taqwa-react-fastapi-2.onrender.com/owner/notifications", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -69,7 +69,7 @@ const Notifications = () => {
     const token = localStorage.getItem("token");
 
     try {
-      const res = await fetch("http://127.0.0.1:8000/owner/notifications", {
+      const res = await fetch("https://shop-taqwa-react-fastapi-2.onrender.com/owner/notifications", {
         headers: {
           Authorization: `Bearer ${token}`,
         },

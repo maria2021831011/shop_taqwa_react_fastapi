@@ -29,13 +29,13 @@ const Profile = () => {
     const fetchProfile = async () => {
       try {
         const [profileRes, loyaltyRes, transactionsRes] = await Promise.all([
-          axios.get("http://127.0.0.1:8000/customers/profile", {
+          axios.get("https://shop-taqwa-react-fastapi-2.onrender.com/customers/profile", {
             headers: { Authorization: `Bearer ${token}` },
           }),
-          axios.get("http://127.0.0.1:8000/loyalty/me", {
+          axios.get("https://shop-taqwa-react-fastapi-2.onrender.com/loyalty/me", {
             headers: { Authorization: `Bearer ${token}` },
           }),
-          axios.get("http://127.0.0.1:8000/customers/transactions", {
+          axios.get("https://shop-taqwa-react-fastapi-2.onrender.com/customers/transactions", {
             headers: { Authorization: `Bearer ${token}` },
           })
         ]);
@@ -78,7 +78,7 @@ const Profile = () => {
 
     try {
       await axios.put(
-        "http://127.0.0.1:8000/customers/profile",
+        "https://shop-taqwa-react-fastapi-2.onrender.com/customers/profile",
         form,
         { headers: { Authorization: `Bearer ${token}` } }
       );
