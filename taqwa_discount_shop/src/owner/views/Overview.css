@@ -1,0 +1,404 @@
+/* Overview.css - Enhanced Version */
+.overview-container {
+  padding: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated background gradient */
+.overview-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 300px;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(16, 185, 129, 0.05) 100%);
+  border-radius: 0 0 50% 50%;
+  transform: scale(1.5);
+  z-index: -1;
+}
+
+.overview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.overview-header h2 {
+  color: #111827;
+  font-size: 2.25rem;
+  font-weight: 800;
+  margin: 0;
+  padding-bottom: 0.75rem;
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.overview-header h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 2px;
+}
+
+/* Live indicator */
+.live-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.3);
+  animation: float 3s ease-in-out infinite;
+}
+
+.live-dot {
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+}
+
+/* Grid layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.75rem;
+  margin-top: 0.5rem;
+}
+
+/* Card styles */
+.card {
+  background: rgb(202, 177, 177);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 
+    0 10px 25px rgba(0, 0, 0, 0.05),
+    0 5px 10px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(229, 231, 235, 0.8);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.8) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.1),
+    0 10px 20px rgba(0, 0, 0, 0.06);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+/* Card accents with animated gradients */
+.card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--accent-start), var(--accent-end));
+  border-radius: 3px 0 0 3px;
+  transition: width 0.3s ease;
+}
+
+.card:hover::after {
+  width: 8px;
+}
+
+.card:nth-child(1) {
+  --accent-start: #3b82f6;
+  --accent-end: #1d4ed8;
+  --card-gradient: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(29, 78, 216, 0.05));
+}
+
+.card:nth-child(2) {
+  --accent-start: #10b981;
+  --accent-end: #059669;
+  --card-gradient: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(5, 150, 105, 0.05));
+}
+
+.card:nth-child(3) {
+  --accent-start: #f59e0b;
+  --accent-end: #d97706;
+  --card-gradient: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(217, 119, 6, 0.05));
+}
+
+.card:nth-child(4) {
+  --accent-start: #8b5cf6;
+  --accent-end: #7c3aed;
+  --card-gradient: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(124, 58, 237, 0.05));
+}
+
+/* Card content */
+.card-content {
+  position: relative;
+}
+
+.card-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  font-size: 24px;
+  background: var(--card-gradient);
+  color: var(--accent-start);
+  transition: all 0.3s ease;
+}
+
+.card:hover .card-icon {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.card-value {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #111827;
+  margin: 0.75rem 0;
+  line-height: 1.2;
+  background: linear-gradient(135deg, var(--accent-start), var(--accent-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.card-subtitle {
+  font-size: 0.875rem;
+  color: #9ca3af;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+/* Currency symbol styling */
+.currency {
+  position: relative;
+  display: inline-block;
+  color: #10b981;
+}
+
+.currency::before {
+  content: '৳';
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent-start);
+  margin-right: 0.25rem;
+  opacity: 0.8;
+}
+
+/* Progress indicator */
+.card-progress {
+  height: 4px;
+  background: rgba(229, 231, 235, 0.5);
+  border-radius: 2px;
+  margin-top: 1rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-progress::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 75%;
+  background: linear-gradient(90deg, var(--accent-start), var(--accent-end));
+  border-radius: 2px;
+  animation: progress 2s ease-in-out;
+}
+
+@keyframes progress {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 75%;
+  }
+}
+
+/* Enhanced hover effects */
+.card:hover .card-progress::after {
+  animation: progressHover 1s ease-in-out infinite alternate;
+}
+
+@keyframes progressHover {
+  0% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .card-value {
+    font-size: 2.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .overview-container {
+    padding: 1.5rem;
+  }
+  
+  .overview-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  
+  .overview-header h2 {
+    font-size: 1.875rem;
+  }
+  
+  .card {
+    padding: 1.75rem;
+  }
+  
+  .card-value {
+    font-size: 2rem;
+  }
+  
+  .card-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .overview-container {
+    padding: 1.25rem;
+  }
+  
+  .overview-header h2 {
+    font-size: 1.625rem;
+  }
+  
+  .card {
+    padding: 1.5rem;
+  }
+  
+  .card-value {
+    font-size: 1.75rem;
+  }
+  
+  .live-indicator {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .overview-container::before {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
+  }
+  
+  .card {
+    background: #1f2937;
+    border-color: rgba(75, 85, 99, 0.5);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card::before {
+    background: linear-gradient(135deg, transparent 0%, rgba(31, 41, 55, 0.8) 100%);
+  }
+  
+  .card-title {
+    color: #9ca3af;
+  }
+  
+  .card-value {
+    color: #f9fafb;
+  }
+  
+  .card-subtitle {
+    color: #6b7280;
+  }
+  
+  .card-progress {
+    background: rgba(75, 85, 99, 0.5);
+  }
+}

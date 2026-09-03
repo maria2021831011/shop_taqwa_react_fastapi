@@ -1,8 +1,5 @@
 # shop_taqwa_react_fastapi
 
-
-
-
 ├─ backend/
 │  ├─ main.py               ← FastAPI entry point
 │  ├─ models.py             ← Database models (MySQL tables)
@@ -93,11 +90,11 @@ taqwa_discount_shop/
 │   │   │   └─ styles/owner.css
 │   │   └─ styles/global.css
 
-
-
 ---
+
 frontend
----
+--------
+
 1.node -v
 npm -v
 
@@ -113,10 +110,11 @@ npm install chart.js react-chartjs-2
 
 5.npm run dev
 
+---
 
----
 Backend (FastAPI)
----
+-----------------
+
 1.python -m venv venv
 
 2.venv\Scripts\activate
@@ -130,3 +128,18 @@ Backend (FastAPI)
 6.pip install python-multipart
 
 7.uvicorn main:app --reload
+
+---
+
+Deploy with Render
+------------------
+
+This repository includes `render.yaml` for a simple two-service deployment:
+
+1. Create a free account at https://render.com and choose **New > Blueprint**.
+2. Connect this repository. Render will create the `taqwa-api` and `taqwa-shop` services.
+3. Provide the API environment variables when prompted: `SECRET_KEY`, `DB_HOST`, `DB_USER`, `DB_PASSWORD`, and `DB_NAME`.
+4. Add the deployed frontend URL to the API service's `CORS_ORIGINS` value. For example: `https://taqwa-shop.onrender.com`.
+5. Use an external MySQL database, since Render's blueprint does not create MySQL. Run `python init_db.py` once with the production database variables to create the tables.
+
+The frontend uses `VITE_API_URL` and defaults to the local API URL when developing locally. If the API service name or URL changes, update `VITE_API_URL` on the frontend service and redeploy it.

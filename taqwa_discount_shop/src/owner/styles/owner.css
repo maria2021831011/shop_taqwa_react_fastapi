@@ -1,0 +1,64 @@
+.owner-dashboard {
+  display: flex;
+  min-height: 100vh;
+  background: #eef2f7;
+}
+
+.owner-sidebar {
+  width: 260px;
+  background: #1b1f3b;
+  color: white;
+  padding: 20px;
+}
+
+.owner-sidebar h1 {
+  margin-bottom: 20px;
+}
+
+.owner-sidebar button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 8px;
+  background: #2f365f;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.owner-content {
+  padding: 30px;
+  width: 100%;
+}
+
+.card {
+  background: white;
+  padding: 16px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.warning {
+  border-left: 6px solid #e67e22;
+}
+
+.alert {
+  border-left: 6px solid #c0392b;
+}
+
+.list li {
+  background: white;
+  padding: 10px;
+  margin-bottom: 6px;
+  border-radius: 6px;
+}
+
+.logout-btn {
+  background: #c0392b !important;
+}

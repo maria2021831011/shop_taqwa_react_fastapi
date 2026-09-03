@@ -1,0 +1,475 @@
+.target-container {
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+/* Header */
+.target-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.target-header h2 {
+  margin: 0;
+  font-size: 32px;
+  color: #1a1a1a;
+  font-weight: 700;
+}
+
+.target-date {
+  margin: 8px 0 0 0;
+  font-size: 14px;
+  color: #888;
+  font-weight: 500;
+}
+
+/* Status Badge */
+.status-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.status-badge.exceeded {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  border-left: 4px solid #4CAF50;
+}
+
+.status-badge.almost {
+  background-color: #fff3e0;
+  color: #e65100;
+  border-left: 4px solid #ff9800;
+}
+
+.status-badge.on-track {
+  background-color: #e3f2fd;
+  color: #1565c0;
+  border-left: 4px solid #2196F3;
+}
+
+.status-badge.behind {
+  background-color: #fff3e0;
+  color: #e65100;
+  border-left: 4px solid #ff9800;
+}
+
+.status-badge.critical {
+  background-color: #ffebee;
+  color: #c62828;
+  border-left: 4px solid #f44336;
+}
+
+.status-emoji {
+  font-size: 18px;
+}
+
+.status-text {
+  font-size: 13px;
+}
+
+/* Loading/Error Messages */
+.loading-message {
+  text-align: center;
+  padding: 40px;
+  background: white;
+  border-radius: 8px;
+  color: #666;
+  font-size: 16px;
+}
+
+.error-message {
+  padding: 16px;
+  background-color: #ffebee;
+  border: 1px solid #f5a6a6;
+  border-radius: 6px;
+  color: #c62828;
+  text-align: center;
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+
+/* Main Content */
+.target-content {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* Progress Section */
+.progress-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.circular-progress-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+}
+
+.circular-progress {
+  width: 200px;
+  height: 200px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.progress-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  position: absolute;
+  text-align: center;
+}
+
+.percentage {
+  font-size: 40px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.progress-label {
+  font-size: 12px;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+/* Metrics Box */
+.metrics-box {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+}
+
+.metric-item {
+  padding: 16px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  border-left: 4px solid #ddd;
+  transition: all 0.3s ease;
+}
+
+.metric-item:hover {
+  transform: translateX(4px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.metric-item.target {
+  border-left-color: #ff9800;
+  background-color: #fff8f0;
+}
+
+.metric-item.achieved {
+  border-left-color: #4CAF50;
+  background-color: #f1f8f5;
+}
+
+.metric-item.remaining {
+  border-left-color: #2196F3;
+  background-color: #e3f2fd;
+}
+
+.metric-item.surplus {
+  border-left-color: #9c27b0;
+  background-color: #f3e5f5;
+}
+
+.metric-label {
+  display: block;
+  font-size: 12px;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.metric-value {
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+/* Chart Section */
+.chart-section {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.chart-section h3 {
+  margin: 0 0 20px 0;
+  font-size: 18px;
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+.chart-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.sales-chart {
+  width: 100%;
+  min-width: 500px;
+  height: auto;
+}
+
+/* Details Grid */
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.detail-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid #2196F3;
+  transition: all 0.3s ease;
+}
+
+.detail-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.detail-card.target-gap {
+  border-left-color: #2196F3;
+  background-color: #e3f2fd;
+}
+
+.detail-icon {
+  font-size: 28px;
+  min-width: 40px;
+}
+
+.detail-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.detail-label {
+  font-size: 12px;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.detail-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+/* Staff Performance */
+.staff-performance {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.staff-performance h3 {
+  margin: 0 0 18px 0;
+  font-size: 18px;
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+.staff-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.staff-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border-left: 3px solid #4CAF50;
+  transition: all 0.2s ease;
+}
+
+.staff-item:hover {
+  background-color: #f1f8f5;
+  transform: translateX(4px);
+}
+
+.staff-rank {
+  font-weight: 700;
+  color: #ff9800;
+  min-width: 30px;
+  font-size: 14px;
+}
+
+.staff-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.staff-name {
+  font-weight: 600;
+  color: #1a1a1a;
+  font-size: 14px;
+}
+
+.staff-orders {
+  font-size: 12px;
+  color: #999;
+}
+
+.staff-sales {
+  font-weight: 700;
+  color: #2e7d32;
+  font-size: 14px;
+  min-width: 80px;
+  text-align: right;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .target-container {
+    padding: 16px;
+  }
+
+  .target-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .target-header h2 {
+    font-size: 24px;
+  }
+
+  .progress-section {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .circular-progress {
+    width: 150px;
+    height: 150px;
+  }
+
+  .percentage {
+    font-size: 32px;
+  }
+
+  .metric-value {
+    font-size: 20px;
+  }
+
+  .sales-chart {
+    min-width: 400px;
+  }
+
+  .details-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .detail-card {
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .detail-icon {
+    font-size: 24px;
+  }
+
+  .detail-value {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .target-container {
+    padding: 12px;
+  }
+
+  .target-header h2 {
+    font-size: 20px;
+  }
+
+  .status-badge {
+    padding: 10px 14px;
+    font-size: 12px;
+  }
+
+  .circular-progress {
+    width: 120px;
+    height: 120px;
+  }
+
+  .percentage {
+    font-size: 28px;
+  }
+
+  .metric-item {
+    padding: 12px;
+  }
+
+  .metric-value {
+    font-size: 18px;
+  }
+
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-card {
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .detail-icon {
+    font-size: 22px;
+  }
+
+  .detail-value {
+    font-size: 16px;
+  }
+
+  .sales-chart {
+    min-width: 350px;
+  }
+}

@@ -1,0 +1,369 @@
+/* StockOverview.css */
+.stock-container {
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.stock-container h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 3px solid #f59e0b;
+  display: inline-block;
+}
+
+/* Stock Dashboard */
+.stock-dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-top: 20px;
+}
+
+/* Stock Card Base */
+.stock-card {
+  background: white;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.stock-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Warning Card (Low Stock) */
+.stock-card.warning {
+  border-left: 6px solid #ef4444;
+  background: linear-gradient(to right, #fff5f5, #fef2f2);
+}
+
+.stock-card.warning::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #ef4444, #fca5a5);
+}
+
+.stock-card.warning:hover {
+  border-color: #dc2626;
+  box-shadow: 0 12px 30px rgba(239, 68, 68, 0.15);
+}
+
+/* Healthy Card */
+.stock-card.healthy {
+  border-left: 6px solid #10b981;
+  background: linear-gradient(to right, #f0fdf4, #dcfce7);
+}
+
+.stock-card.healthy::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #10b981, #34d399);
+}
+
+.stock-card.healthy:hover {
+  border-color: #059669;
+  box-shadow: 0 12px 30px rgba(16, 185, 129, 0.15);
+}
+
+/* Card Header */
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.card-count {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: 20px;
+}
+
+.stock-card.warning .card-count {
+  background: #fecaca;
+  color: #991b1b;
+}
+
+.stock-card.healthy .card-count {
+  background: #bbf7d0;
+  color: #166534;
+}
+
+/* Status Indicator */
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.status-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+.warning .status-dot {
+  background: #ef4444;
+  box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4);
+}
+
+.healthy .status-dot {
+  background: #10b981;
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4);
+}
+
+.status-text {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.warning .status-text {
+  color: #ef4444;
+}
+
+.healthy .status-text {
+  color: #10b981;
+}
+
+/* Product List */
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.product-item {
+  background: white;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.2s ease;
+  border: 1px solid #e5e7eb;
+  flex: 1;
+  min-width: 120px;
+}
+
+.product-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.warning .product-item {
+  border-color: #fecaca;
+  background: linear-gradient(to right, #fff5f5, #fee2e2);
+  color: #7f1d1d;
+}
+
+.healthy .product-item {
+  border-color: #bbf7d0;
+  background: linear-gradient(to right, #f0fdf4, #dcfce7);
+  color: #064e3b;
+}
+
+/* Product Icon */
+.product-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.warning .product-icon {
+  background: #fecaca;
+  color: #dc2626;
+}
+
+.healthy .product-icon {
+  background: #bbf7d0;
+  color: #059669;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: #6b7280;
+}
+
+.empty-state svg {
+  margin-bottom: 16px;
+  color: #d1d5db;
+  opacity: 0.7;
+}
+
+/* Stock Summary */
+.stock-summary {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+  padding: 20px;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.summary-item {
+  text-align: center;
+  flex: 1;
+}
+
+.summary-label {
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 8px;
+}
+
+.summary-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.summary-value.warning {
+  color: #ef4444;
+}
+
+.summary-value.healthy {
+  color: #10b981;
+}
+
+/* Urgent Alert */
+.urgent-alert {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  animation: alertPulse 2s infinite;
+}
+
+@keyframes alertPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(239, 68, 68, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+/* Loading State */
+.loading-skeleton {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.skeleton-card {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  border-radius: 16px;
+  height: 200px;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .stock-container {
+    padding: 16px;
+  }
+
+  .stock-dashboard {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .stock-card {
+    padding: 20px;
+  }
+
+  .product-list {
+    flex-direction: column;
+  }
+
+  .product-item {
+    min-width: auto;
+  }
+
+  .stock-summary {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stock-container h2 {
+    font-size: 24px;
+  }
+
+  .card-title {
+    font-size: 16px;
+  }
+
+  .product-item {
+    font-size: 13px;
+    padding: 10px 14px;
+  }
+}

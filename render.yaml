@@ -1,0 +1,33 @@
+services:
+  - type: web
+    name: taqwa-api
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r ../requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: SECRET_KEY
+        sync: false
+      - key: DB_HOST
+        sync: false
+      - key: DB_USER
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: DB_NAME
+        sync: false
+
+  - type: web
+    name: taqwa-shop
+    runtime: static
+    rootDir: taqwa_discount_shop
+    buildCommand: npm ci && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://taqwa-api.onrender.com
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
