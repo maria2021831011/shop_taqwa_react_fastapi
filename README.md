@@ -1,145 +1,181 @@
-# shop_taqwa_react_fastapi
+# Taqwa Discount Shop
 
-├─ backend/
-│  ├─ main.py               ← FastAPI entry point
-│  ├─ models.py             ← Database models (MySQL tables)
-│  ├─ schemas.py            ← Pydantic schemas for request/response
-│  ├─ database.py           ← MySQL connection
-│  ├─ auth.py               ← Login, register, JWT token logic
-│  └─ routes/
-│     ├─ customer.py
-│     ├─ staff.py
-│     ├─ supplier.py
-│     ├─ manager.py
-│     └─ owner.py
-├─ taqwa_discount_shop/               ← frontend
-│  ├─ src/
-│  └─ ...
-└─ README.md
+A full-stack retail management system built with **FastAPI** and **React**, featuring role-based dashboards for customers, staff, managers, suppliers, and owners.
 
-taqwa_discount_shop/
-│
-├─ backend/                  # FastAPI backend
-│   ├─ venv/                 # Python virtual environment
-│   ├─ main.py               # FastAPI app entry point
-│   ├─ database.py           # MySQL connection
-│   ├─ auth.py               # Login/Register routes
-│   ├─ stock.py              # Stock CRUD routes
-│   ├─ staff.py              # Optional staff-specific APIs
-│   └─ models/               # (Optional) Pydantic models if complex
-│       └─ user_models.py
-│
-├─ taqwa_discount_shop/      # React frontend
-│   ├─ src/
-│   │   ├─ App.jsx
-│   │   ├─ main.jsx
-│   │   ├─ home/             # Homepage
-│   │   │   └─ Home.jsx
-│   │   ├─ auth/             # Auth pages
-│   │   │   ├─ Login.jsx
-│   │   │   ├─ Register.jsx
-│   │   │   └─ ForgotPassword.jsx
-│   │   ├─ customer/
-│   │   │   ├─ CustomerDashboard.jsx
-│   │   │   ├─ views/
-│   │   │   │   ├─ Header.jsx
-│   │   │   │   ├─ Loyalty.jsx
-│   │   │   │   ├─ Profile.jsx
-│   │   │   │   └─ OrderHistory.jsx
-│   │   │   └─ styles/customer.css
-│   │   ├─ staff/
-│   │   │   ├─ StaffDashboard.jsx
-│   │   │   ├─ views/
-│   │   │   │   ├─ StaffHeader.jsx
-│   │   │   │   ├─ POS.jsx
-│   │   │   │   ├─ ProductSearch.jsx
-│   │   │   │   ├─ CustomerForm.jsx
-│   │   │   │   ├─ SalesSummary.jsx
-│   │   │   │   ├─ Performance.jsx
-│   │   │   │   └─ Stock.jsx          # Connected to backend
-│   │   │   └─ styles/staff.css
-│   │   ├─ supplier/
-│   │   │   ├─ SupplierDashboard.jsx
-│   │   │   ├─ views/
-│   │   │   │   ├─ SupplierHeader.jsx
-│   │   │   │   ├─ Orders.jsx
-│   │   │   │   ├─ InvoiceUpload.jsx
-│   │   │   │   └─ Messages.jsx
-│   │   │   └─ styles/supplier.css
-│   │   ├─ manager/
-│   │   │   ├─ ManagerDashboard.jsx
-│   │   │   ├─ views/
-│   │   │   │   ├─ ManagerHeader.jsx
-│   │   │   │   ├─ DailySales.jsx
-│   │   │   │   ├─ LiveStock.jsx
-│   │   │   │   ├─ Target.jsx
-│   │   │   │   ├─ Schedule.jsx
-│   │   │   │   ├─ Feedback.jsx
-│   │   │   │   └─ PendingOrders.jsx
-│   │   │   └─ styles/manager.css
-│   │   ├─ owner/
-│   │   │   ├─ OwnerDashboard.jsx
-│   │   │   ├─ views/
-│   │   │   │   ├─ OwnerHeader.jsx
-│   │   │   │   ├─ Overview.jsx
-│   │   │   │   ├─ SalesGraph.jsx
-│   │   │   │   ├─ ProfitLoss.jsx
-│   │   │   │   ├─ StockOverview.jsx
-│   │   │   │   ├─ ActivityLog.jsx
-│   │   │   │   └─ Notifications.jsx
-│   │   │   └─ styles/owner.css
-│   │   └─ styles/global.css
+**Live Demo:** [https://shop-taqwa-react-fastapi.vercel.app/](https://shop-taqwa-react-fastapi.vercel.app/)
 
 ---
 
-frontend
---------
+## Overview
 
-1.node -v
-npm -v
+Taqwa Discount Shop is a complete retail operations platform designed to streamline day-to-day activities across sales, inventory, customer loyalty, supplier management, and business analytics. The system provides dedicated dashboards and workflows for each user role.
 
-2.npm create vite@latest taqwa_discount_shop
+---
+
+## Tech Stack
+
+| Layer | Technologies |
+|-------|-------------|
+| **Backend** | Python, FastAPI, SQLAlchemy, JWT Auth, Pydantic |
+| **Frontend** | React 19, Vite 7, React Router 7, Axios |
+| **Database** | MySQL |
+| **Charts** | Chart.js, Recharts |
+| **Icons** | Lucide React, React Icons |
+| **Deployment** | Vercel (Frontend), Render (Backend) |
+
+---
+
+## Features
+
+### Customer
+- Registration and login
+- Product browsing and search
+- Loyalty points and rewards tracking
+- Order history and profile management
+
+### Staff
+- Point-of-sale (POS) workflow
+- Customer management at checkout
+- Stock and product search
+- Sales summary and performance tracking
+- Schedule management
+
+### Manager
+- Daily sales monitoring
+- Live inventory visibility
+- Target tracking and feedback
+- Purchase order oversight
+- Staff scheduling
+
+### Supplier
+- Invoice uploads and record tracking
+- Order management
+- Shop information access
+- Notifications
+
+### Owner
+- Business overview dashboard
+- Profit & loss reporting
+- Stock overview
+- Performance scorecards
+- Activity logs and notifications
+- Sales analytics with charts
+
+---
+
+## Project Structure
+
+```
+shop_taqwa_react_fastapi/
+├── backend/
+│   ├── main.py
+│   ├── auth.py
+│   ├── database.py
+│   ├── models.py
+│   ├── schemas.py
+│   ├── dependencies.py
+│   └── routes/
+│       ├── customers.py
+│       ├── invoices.py
+│       ├── loyalty.py
+│       ├── manager_dashboard.py
+│       ├── messages.py
+│       ├── owner.py
+│       ├── pos.py
+│       ├── products.py
+│       ├── purchase.py
+│       ├── sales.py
+│       ├── schedule.py
+│       ├── staff_pos.py
+│       ├── staff_stock.py
+│       └── supplier.py
+├── taqwa_discount_shop/
+│   ├── src/
+│   │   ├── auth/
+│   │   ├── customer/
+│   │   ├── staff/
+│   │   ├── manager/
+│   │   ├── supplier/
+│   │   ├── owner/
+│   │   └── home/
+│   ├── public/
+│   ├── index.html
+│   ├── package.json
+│   └── vite.config.js
+├── init_db.py
+├── render.yaml
+├── requirements.txt
+└── README.md
+```
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- Python 3.10+
+- Node.js 18+
+- MySQL
+
+### Environment Variables
+
+**Backend** (`.env`):
+
+```env
+SECRET_KEY=your_secret_key
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=your_password
+DB_NAME=taqwa_shop
+CORS_ORIGINS=http://localhost:5173
+```
+
+**Frontend** (`.env`):
+
+```env
+VITE_API_URL=http://localhost:8000
+```
+
+### Installation
+
+**Backend:**
+
+```bash
+cd backend
+python -m venv .venv
+source .venv/bin/activate      # Windows: .venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+python -m main                  # Starts on port 8000
+```
+
+**Frontend:**
+
+```bash
 cd taqwa_discount_shop
 npm install
+npm run dev                     # Starts on port 5173
+```
 
-3.npm install axios react-router-dom
+**Database:**
 
-4.npm install jwt-decode
-npm install react-icons
-npm install chart.js react-chartjs-2
-
-5.npm run dev
-
----
-
-Backend (FastAPI)
------------------
-
-1.python -m venv venv
-
-2.venv\Scripts\activate
-
-3.pip install fastapi uvicorn
-
-4.pip install pymysql
-
-5.pip install python-jose passlib[bcrypt]
-
-6.pip install python-multipart
-
-7.uvicorn main:app --reload
+```bash
+python init_db.py
+```
 
 ---
 
-Deploy with Render
-------------------
+## Deployment
 
-This repository includes `render.yaml` for a simple two-service deployment:
+The project is configured for deployment via [render.yaml](render.yaml):
 
-1. Create a free account at https://render.com and choose **New > Blueprint**.
-2. Connect this repository. Render will create the `taqwa-api` and `taqwa-shop` services.
-3. Provide the API environment variables when prompted: `SECRET_KEY`, `DB_HOST`, `DB_USER`, `DB_PASSWORD`, and `DB_NAME`.
-4. Add the deployed frontend URL to the API service's `CORS_ORIGINS` value. For example: `https://taqwa-shop.onrender.com`.
-5. Use an external MySQL database, since Render's blueprint does not create MySQL. Run `python init_db.py` once with the production database variables to create the tables.
+- **Backend** — FastAPI service on Render
+- **Frontend** — React SPA on Vercel
 
-The frontend uses `VITE_API_URL` and defaults to the local API URL when developing locally. If the API service name or URL changes, update `VITE_API_URL` on the frontend service and redeploy it.
+Ensure your MySQL database is accessible from the deployment environment and set the required environment variables accordingly.
+
+---
+
+## License
+
+See [LICENSE](LICENSE) for details.
